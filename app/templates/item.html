@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <h1>搜索物品</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.itemname.label }}<br>
+            {{ form.itemname(size=32) }}<br>
+            {% for error in form.itemname.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
